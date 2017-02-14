@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.jeesuite</groupId>
 	<artifactId>jeesuite-libs</artifactId>
-	<version>2</version>
+	<version>1.0</version>
 	<packaging>pom</packaging>
 	<description>java 后台开发套件</description>
 	<name>jeesuite-libs</name>
@@ -23,22 +23,28 @@
 			<organization>github</organization>
 			<organizationUrl>https://github.com/vakinge</organizationUrl>
 		</developer>
+		<developer>
+			<name>kira liu</name>
+			<email>liujunhao1987@gmail.com</email>
+			<organization>github</organization>
+			<organizationUrl>https://github.com/kakasjuno</organizationUrl>
+		</developer>
 	</developers>
 
 	<scm>
 		<connection>
-         scm:git:https://github.com/vakinge/jeesuite-libs.git
+         scm:git:https://github.com/liujunhao/jeesuite-libs.git
       </connection>
 		<developerConnection>
-         scm:git:https://github.com/vakinge/jeesuite-libs.git
+         scm:git:https://github.com/liujunhao/jeesuite-libs.git
       </developerConnection>
-		<url>https://github.com/vakinge/jeesuite-libs</url>
+		<url>https://github.com/liujunhao/jeesuite-libs</url>
 		<tag>v1.0</tag>
 	</scm>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<compiler.jdk.version>1.8</compiler.jdk.version>
+		<compiler.jdk.version>1.7</compiler.jdk.version>
 		<output.encoding>utf-8</output.encoding>
 		<spring.version>4.2.5.RELEASE</spring.version>
 		<kafka.version>0.10.0.1</kafka.version>
@@ -62,7 +68,7 @@
 		<module>jeesuite-confcenter</module>
 		<module>jeesuite-common2</module>
 		<module>jeesuite-log</module>
-		<module>jeesuite-filesystem</module>
+		<!--<module>jeesuite-filesystem</module>-->
 	</modules>
 
 	<dependencies>
@@ -147,9 +153,11 @@
 								<goals>
 									<goal>jar</goal>
 								</goals>
+								<!--
 								<configuration>
 									<additionalparam>-Xdoclint:none</additionalparam>
 								</configuration>
+								-->
 							</execution>
 						</executions>
 					</plugin>
@@ -198,12 +206,12 @@
 	<distributionManagement>
 	    <!-- mvn clean deploy -P release -DskipTests=true -Dgpg.passphrase=密码 -->
 		<snapshotRepository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<id>unc-nexus</id>
+			<url>http://uctd.com.cn:8081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+			<id>unc-nexus</id>
+			<url>http://uctd.com.cn:8081/nexus/content/repositories/releases/</url>
 		</repository>
 	</distributionManagement>
 
